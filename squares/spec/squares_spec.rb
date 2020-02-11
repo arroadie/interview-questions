@@ -60,7 +60,7 @@ describe Squares do
       # puts JSON.pretty_generate $debug_response
     
       p "calculated #{squares} squares out of #{unknow_points.size} points in #{elapsed} seconds"
-      Squares::print_matrix
+      # Squares::print_matrix
       expect(unknow_points).not_to be_nil
     end
   end

@@ -81,7 +81,10 @@ module Squares
             lines[line.key] = []
             lines[line.key] << line
           else
-            lines[line.key] << line unless lines[line.key].last.hash == line.hash || lines[line.key].first.hash == line.hash
+            # Add to the array it it's not there (handles duplicate points that should't be unique)
+            unless lines[line.key].any?{ |a| a.eql? line }
+              lines[line.key] << line
+            end
           end
         end
       end
